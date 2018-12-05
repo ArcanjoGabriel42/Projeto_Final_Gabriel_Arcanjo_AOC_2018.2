@@ -1,0 +1,102 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/Documentos/Torre_Processor/simulation/qsim
+Edatapath
+Z1 w1543964472
+Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 PDz30Zoj;e1JEj1l7dCiT1
+Z3 DPx8 cyclonev 19 cyclonev_components 0 22 O_kVZAFaN7XDl67flUT[n1
+Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 ;`SHL]^j4UaADA9ENAN^]0
+Z5 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z6 DPx6 altera 11 dffeas_pack 0 22 Dg`GWTC`^Q8GNSMPeo22;3
+Z7 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z9 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z10 DPx6 altera 28 altera_primitives_components 0 22 _LNC5n6B?5VN@W;M4Dg@k1
+R0
+Z11 8Torre_Processor.vho
+Z12 FTorre_Processor.vho
+l0
+L38
+VmHdC@1h`@R?Sg[dB[I^Jd1
+!s100 3h9UD`54N5];1PF`<`]mQ2
+Z13 OV;C;10.5b;63
+32
+Z14 !s110 1543964474
+!i10b 1
+Z15 !s108 1543964474.000000
+Z16 !s90 -work|work|Torre_Processor.vho|
+Z17 !s107 Torre_Processor.vho|
+!i113 1
+Z18 o-work work
+Z19 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+DEx4 work 8 datapath 0 22 mHdC@1h`@R?Sg[dB[I^Jd1
+l1624
+L71
+Vjl<89U=QSQPChHc^I1f:O3
+!s100 h17ncG@0W9LQUgHFkdUc53
+R13
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 1
+R18
+R19
+Edatapath_vhd_vec_tst
+Z20 w1543964469
+R8
+R9
+R0
+Z21 8Waveform.vwf.vht
+Z22 FWaveform.vwf.vht
+l0
+L31
+VIHFkm4W?_O7LbQ`];lz?<1
+!s100 WSND17n`95cIi1P?e3l0C1
+R13
+32
+R14
+!i10b 1
+R15
+Z23 !s90 -work|work|Waveform.vwf.vht|
+Z24 !s107 Waveform.vwf.vht|
+!i113 1
+R18
+R19
+Adatapath_arch
+R8
+R9
+Z25 DEx4 work 20 datapath_vhd_vec_tst 0 22 IHFkm4W?_O7LbQ`];lz?<1
+l96
+L33
+V9edGKifLN8TCPX^ULgdSA2
+!s100 <moIoS6LKk25zcN1Cg[L:3
+R13
+32
+R14
+!i10b 1
+R15
+R23
+R24
+!i113 1
+R18
+R19

@@ -1,0 +1,868 @@
+Analysis & Synthesis report for Torre_Processor
+Tue Dec 04 22:58:08 2018
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. User-Specified and Inferred Latches
+ 10. Logic Cells Representing Combinational Loops
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Registers Packed Into Inferred Megafunctions
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for memram:G17|altsyncram:RAM_rtl_0|altsyncram_gjv1:auto_generated
+ 17. Parameter Settings for Inferred Entity Instance: memram:G17|altsyncram:RAM_rtl_0
+ 18. altsyncram Parameter Settings by Entity Instance
+ 19. Port Connectivity Checks: "UnidadedeControle:G5"
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Dec 04 22:58:08 2018       ;
+; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
+; Revision Name                   ; Torre_Processor                             ;
+; Top-level Entity Name           ; DataPath                                    ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 34                                          ;
+; Total pins                      ; 186                                         ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 16,016                                      ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Top-level entity name                                                           ; DataPath           ; Torre_Processor    ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                              ;
++-------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                  ; Library ;
++-------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------+---------+
+; Componentes/UnidadedeControle.vhd               ; yes             ; User VHDL File                                        ; E:/Documentos/Torre_Processor/Componentes/UnidadedeControle.vhd               ;         ;
+; Componentes/ULA.vhd                             ; yes             ; User VHDL File                                        ; E:/Documentos/Torre_Processor/Componentes/ULA.vhd                             ;         ;
+; Componentes/SomadorPC.vhd                       ; yes             ; User VHDL File                                        ; E:/Documentos/Torre_Processor/Componentes/SomadorPC.vhd                       ;         ;
+; Componentes/Somadorde16bits.vhd                 ; yes             ; User VHDL File                                        ; E:/Documentos/Torre_Processor/Componentes/Somadorde16bits.vhd                 ;         ;
+; Componentes/ShiftEsquerda.vhd                   ; yes             ; User VHDL File                                        ; E:/Documentos/Torre_Processor/Componentes/ShiftEsquerda.vhd                   ;         ;
+; Componentes/Qsll.vhd                            ; yes             ; User VHDL File                                        ; E:/Documentos/Torre_Processor/Componentes/Qsll.vhd                            ;         ;
+; Componentes/QAndBIT.vhd                         ; yes             ; User VHDL File                                        ; E:/Documentos/Torre_Processor/Componentes/QAndBIT.vhd                         ;         ;
+; Componentes/PC.vhd                              ; yes             ; User VHDL File                                        ; E:/Documentos/Torre_Processor/Componentes/PC.vhd                              ;         ;
+; Componentes/OperacaoDaULA.vhd                   ; yes             ; User VHDL File                                        ; E:/Documentos/Torre_Processor/Componentes/OperacaoDaULA.vhd                   ;         ;
+; Componentes/Multiplexador2x1_16bits.vhd         ; yes             ; User VHDL File                                        ; E:/Documentos/Torre_Processor/Componentes/Multiplexador2x1_16bits.vhd         ;         ;
+; Componentes/Multiplexador2x1.vhd                ; yes             ; User VHDL File                                        ; E:/Documentos/Torre_Processor/Componentes/Multiplexador2x1.vhd                ;         ;
+; Componentes/memram.vhd                          ; yes             ; User VHDL File                                        ; E:/Documentos/Torre_Processor/Componentes/memram.vhd                          ;         ;
+; Componentes/memoria_rom2.vhd                    ; yes             ; User VHDL File                                        ; E:/Documentos/Torre_Processor/Componentes/memoria_rom2.vhd                    ;         ;
+; Componentes/ExtensordeSinal6To16bits.vhd        ; yes             ; User VHDL File                                        ; E:/Documentos/Torre_Processor/Componentes/ExtensordeSinal6To16bits.vhd        ;         ;
+; Componentes/DataPath.vhd                        ; yes             ; User VHDL File                                        ; E:/Documentos/Torre_Processor/Componentes/DataPath.vhd                        ;         ;
+; Componentes/BancoRegistradores.vhd              ; yes             ; User VHDL File                                        ; E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd              ;         ;
+; altsyncram.tdf                                  ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altsyncram.tdf         ;         ;
+; stratix_ram_block.inc                           ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/stratix_ram_block.inc  ;         ;
+; lpm_mux.inc                                     ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/lpm_mux.inc            ;         ;
+; lpm_decode.inc                                  ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/lpm_decode.inc         ;         ;
+; aglobal180.inc                                  ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/aglobal180.inc         ;         ;
+; a_rdenreg.inc                                   ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/a_rdenreg.inc          ;         ;
+; altrom.inc                                      ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altrom.inc             ;         ;
+; altram.inc                                      ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altram.inc             ;         ;
+; altdpram.inc                                    ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altdpram.inc           ;         ;
+; db/altsyncram_gjv1.tdf                          ; yes             ; Auto-Generated Megafunction                           ; E:/Documentos/Torre_Processor/db/altsyncram_gjv1.tdf                          ;         ;
+; db/torre_processor.ram0_memram_e416e912.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; E:/Documentos/Torre_Processor/db/torre_processor.ram0_memram_e416e912.hdl.mif ;         ;
++-------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                       ;
++---------------------------------------------+---------------------+
+; Resource                                    ; Usage               ;
++---------------------------------------------+---------------------+
+; Estimate of Logic utilization (ALMs needed) ; 327                 ;
+;                                             ;                     ;
+; Combinational ALUT usage for logic          ; 556                 ;
+;     -- 7 input functions                    ; 6                   ;
+;     -- 6 input functions                    ; 91                  ;
+;     -- 5 input functions                    ; 185                 ;
+;     -- 4 input functions                    ; 78                  ;
+;     -- <=3 input functions                  ; 196                 ;
+;                                             ;                     ;
+; Dedicated logic registers                   ; 34                  ;
+;                                             ;                     ;
+; I/O pins                                    ; 186                 ;
+; Total MLAB memory bits                      ; 0                   ;
+; Total block memory bits                     ; 16016               ;
+;                                             ;                     ;
+; Total DSP Blocks                            ; 0                   ;
+;                                             ;                     ;
+; Maximum fan-out node                        ; Clock_Sistema~input ;
+; Maximum fan-out                             ; 84                  ;
+; Total fan-out                               ; 3132                ;
+; Average fan-out                             ; 3.20                ;
++---------------------------------------------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                    ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------+-------------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                      ; Entity Name             ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------+-------------------------+--------------+
+; |DataPath                                 ; 556 (0)             ; 34 (0)                    ; 16016             ; 0          ; 186  ; 0            ; |DataPath                                                                ; DataPath                ; work         ;
+;    |BancoRegistradores:G7|                ; 165 (165)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|BancoRegistradores:G7                                          ; BancoRegistradores      ; work         ;
+;    |Multiplexador2x1:G6|                  ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|Multiplexador2x1:G6                                            ; Multiplexador2x1        ; work         ;
+;    |Multiplexador2x1_16bits:G12|          ; 14 (14)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|Multiplexador2x1_16bits:G12                                    ; Multiplexador2x1_16bits ; work         ;
+;    |Multiplexador2x1_16bits:G14|          ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|Multiplexador2x1_16bits:G14                                    ; Multiplexador2x1_16bits ; work         ;
+;    |Multiplexador2x1_16bits:G18|          ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|Multiplexador2x1_16bits:G18                                    ; Multiplexador2x1_16bits ; work         ;
+;    |PC:G1|                                ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |DataPath|PC:G1                                                          ; PC                      ; work         ;
+;    |QAndBIT:G11|                          ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|QAndBIT:G11                                                    ; QAndBIT                 ; work         ;
+;    |ShiftEsquerda:G9|                     ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|ShiftEsquerda:G9                                               ; ShiftEsquerda           ; work         ;
+;    |SomadorPC:G2|                         ; 16 (16)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |DataPath|SomadorPC:G2                                                   ; SomadorPC               ; work         ;
+;    |Somadorde16bits:G10|                  ; 14 (14)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|Somadorde16bits:G10                                            ; Somadorde16bits         ; work         ;
+;    |ULA:G16|                              ; 278 (278)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|ULA:G16                                                        ; ULA                     ; work         ;
+;    |UnidadedeControle:G5|                 ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|UnidadedeControle:G5                                           ; UnidadedeControle       ; work         ;
+;    |memoria_ROM2:G4|                      ; 34 (34)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|memoria_ROM2:G4                                                ; memoria_ROM2            ; work         ;
+;    |memram:G17|                           ; 0 (0)               ; 0 (0)                     ; 16016             ; 0          ; 0    ; 0            ; |DataPath|memram:G17                                                     ; memram                  ; work         ;
+;       |altsyncram:RAM_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 16016             ; 0          ; 0    ; 0            ; |DataPath|memram:G17|altsyncram:RAM_rtl_0                                ; altsyncram              ; work         ;
+;          |altsyncram_gjv1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 16016             ; 0          ; 0    ; 0            ; |DataPath|memram:G17|altsyncram:RAM_rtl_0|altsyncram_gjv1:auto_generated ; altsyncram_gjv1         ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------+-------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                          ;
++---------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-------------------------------------------------+
+; Name                                                                      ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                                             ;
++---------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-------------------------------------------------+
+; memram:G17|altsyncram:RAM_rtl_0|altsyncram_gjv1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1001         ; 16           ; 1001         ; 16           ; 16016 ; db/Torre_Processor.ram0_memram_e416e912.hdl.mif ;
++---------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                            ;
++-----------------------------------------------------+---------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal             ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------------------+------------------------+
+; BancoRegistradores:G7|Reg[4][0]                     ; BancoRegistradores:G7|Reg[4][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[5][0]                     ; BancoRegistradores:G7|Reg[5][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[6][0]                     ; BancoRegistradores:G7|Reg[6][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[7][0]                     ; BancoRegistradores:G7|Reg[7][1] ; yes                    ;
+; BancoRegistradores:G7|Reg[4][1]                     ; BancoRegistradores:G7|Reg[4][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[5][1]                     ; BancoRegistradores:G7|Reg[5][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[6][1]                     ; BancoRegistradores:G7|Reg[6][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[7][1]                     ; BancoRegistradores:G7|Reg[7][1] ; yes                    ;
+; BancoRegistradores:G7|Reg[4][2]                     ; BancoRegistradores:G7|Reg[4][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[5][2]                     ; BancoRegistradores:G7|Reg[5][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[6][2]                     ; BancoRegistradores:G7|Reg[6][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[7][2]                     ; BancoRegistradores:G7|Reg[7][1] ; yes                    ;
+; BancoRegistradores:G7|Reg[4][3]                     ; BancoRegistradores:G7|Reg[4][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[5][3]                     ; BancoRegistradores:G7|Reg[5][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[6][3]                     ; BancoRegistradores:G7|Reg[6][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[7][3]                     ; BancoRegistradores:G7|Reg[7][1] ; yes                    ;
+; BancoRegistradores:G7|Reg[4][4]                     ; BancoRegistradores:G7|Reg[4][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[5][4]                     ; BancoRegistradores:G7|Reg[5][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[6][4]                     ; BancoRegistradores:G7|Reg[6][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[7][4]                     ; BancoRegistradores:G7|Reg[7][1] ; yes                    ;
+; BancoRegistradores:G7|Reg[4][5]                     ; BancoRegistradores:G7|Reg[4][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[5][5]                     ; BancoRegistradores:G7|Reg[5][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[6][5]                     ; BancoRegistradores:G7|Reg[6][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[7][5]                     ; BancoRegistradores:G7|Reg[7][1] ; yes                    ;
+; BancoRegistradores:G7|Reg[4][6]                     ; BancoRegistradores:G7|Reg[4][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[5][6]                     ; BancoRegistradores:G7|Reg[5][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[6][6]                     ; BancoRegistradores:G7|Reg[6][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[7][6]                     ; BancoRegistradores:G7|Reg[7][1] ; yes                    ;
+; BancoRegistradores:G7|Reg[4][7]                     ; BancoRegistradores:G7|Reg[4][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[5][7]                     ; BancoRegistradores:G7|Reg[5][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[6][7]                     ; BancoRegistradores:G7|Reg[6][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[7][7]                     ; BancoRegistradores:G7|Reg[7][1] ; yes                    ;
+; BancoRegistradores:G7|Reg[4][8]                     ; BancoRegistradores:G7|Reg[4][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[5][8]                     ; BancoRegistradores:G7|Reg[5][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[6][8]                     ; BancoRegistradores:G7|Reg[6][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[7][8]                     ; BancoRegistradores:G7|Reg[7][1] ; yes                    ;
+; BancoRegistradores:G7|Reg[4][9]                     ; BancoRegistradores:G7|Reg[4][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[5][9]                     ; BancoRegistradores:G7|Reg[5][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[6][9]                     ; BancoRegistradores:G7|Reg[6][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[7][9]                     ; BancoRegistradores:G7|Reg[7][1] ; yes                    ;
+; BancoRegistradores:G7|Reg[4][10]                    ; BancoRegistradores:G7|Reg[4][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[5][10]                    ; BancoRegistradores:G7|Reg[5][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[6][10]                    ; BancoRegistradores:G7|Reg[6][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[7][10]                    ; BancoRegistradores:G7|Reg[7][1] ; yes                    ;
+; BancoRegistradores:G7|Reg[4][11]                    ; BancoRegistradores:G7|Reg[4][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[5][11]                    ; BancoRegistradores:G7|Reg[5][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[6][11]                    ; BancoRegistradores:G7|Reg[6][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[7][11]                    ; BancoRegistradores:G7|Reg[7][1] ; yes                    ;
+; BancoRegistradores:G7|Reg[4][12]                    ; BancoRegistradores:G7|Reg[4][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[5][12]                    ; BancoRegistradores:G7|Reg[5][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[6][12]                    ; BancoRegistradores:G7|Reg[6][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[7][12]                    ; BancoRegistradores:G7|Reg[7][1] ; yes                    ;
+; BancoRegistradores:G7|Reg[4][13]                    ; BancoRegistradores:G7|Reg[4][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[5][13]                    ; BancoRegistradores:G7|Reg[5][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[6][13]                    ; BancoRegistradores:G7|Reg[6][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[7][13]                    ; BancoRegistradores:G7|Reg[7][1] ; yes                    ;
+; BancoRegistradores:G7|Reg[4][14]                    ; BancoRegistradores:G7|Reg[4][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[5][14]                    ; BancoRegistradores:G7|Reg[5][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[6][14]                    ; BancoRegistradores:G7|Reg[6][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[7][14]                    ; BancoRegistradores:G7|Reg[7][1] ; yes                    ;
+; BancoRegistradores:G7|Reg[4][15]                    ; BancoRegistradores:G7|Reg[4][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[5][15]                    ; BancoRegistradores:G7|Reg[5][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[6][15]                    ; BancoRegistradores:G7|Reg[6][0] ; yes                    ;
+; BancoRegistradores:G7|Reg[7][15]                    ; BancoRegistradores:G7|Reg[7][1] ; yes                    ;
+; Number of user-specified and inferred latches = 64  ;                                 ;                        ;
++-----------------------------------------------------+---------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                ;
++--------------------------------------------------------+----+
+; Logic Cell Name                                        ;    ;
++--------------------------------------------------------+----+
+; Multiplexador2x1_16bits:G18|SAIDA[0]~1                 ;    ;
+; Multiplexador2x1_16bits:G18|SAIDA[1]~3                 ;    ;
+; Multiplexador2x1_16bits:G18|SAIDA[2]~2                 ;    ;
+; Multiplexador2x1_16bits:G18|SAIDA[3]~4                 ;    ;
+; Multiplexador2x1_16bits:G18|SAIDA[4]~5                 ;    ;
+; Multiplexador2x1_16bits:G18|SAIDA[5]~6                 ;    ;
+; Multiplexador2x1_16bits:G18|SAIDA[6]~7                 ;    ;
+; Multiplexador2x1_16bits:G18|SAIDA[7]~8                 ;    ;
+; Multiplexador2x1_16bits:G18|SAIDA[8]~15                ;    ;
+; Multiplexador2x1_16bits:G18|SAIDA[9]~14                ;    ;
+; Multiplexador2x1_16bits:G18|SAIDA[10]~13               ;    ;
+; Multiplexador2x1_16bits:G18|SAIDA[11]~12               ;    ;
+; Multiplexador2x1_16bits:G18|SAIDA[12]~11               ;    ;
+; Multiplexador2x1_16bits:G18|SAIDA[13]~10               ;    ;
+; Multiplexador2x1_16bits:G18|SAIDA[14]~9                ;    ;
+; Multiplexador2x1_16bits:G18|SAIDA[15]~0                ;    ;
+; Number of logic cells representing combinational loops ; 16 ;
++--------------------------------------------------------+----+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; ShiftEsquerda:G9|AUX[0,1]              ; Stuck at GND due to stuck port data_in ;
+; Qsll:G3|vet[0,1]                       ; Stuck at GND due to stuck port data_in ;
+; ShiftEsquerda:G9|SAIDA[0,1]            ; Stuck at GND due to stuck port data_in ;
+; Qsll:G3|resshift[0,1]                  ; Stuck at GND due to stuck port data_in ;
+; ShiftEsquerda:G9|SAIDA[7..9,11..15]    ; Merged with ShiftEsquerda:G9|SAIDA[10] ;
+; ShiftEsquerda:G9|SAIDA[6]              ; Merged with ShiftEsquerda:G9|SAIDA[3]  ;
+; Qsll:G3|resshift[6]                    ; Merged with Qsll:G3|resshift[3]        ;
+; Qsll:G3|resshift[5]                    ; Merged with Qsll:G3|resshift[12]       ;
+; Qsll:G3|resshift[7]                    ; Merged with Qsll:G3|resshift[11]       ;
+; ShiftEsquerda:G9|AUX[7..9,11..15]      ; Merged with ShiftEsquerda:G9|AUX[10]   ;
+; ShiftEsquerda:G9|AUX[6]                ; Merged with ShiftEsquerda:G9|AUX[3]    ;
+; Qsll:G3|vet[6]                         ; Merged with Qsll:G3|vet[3]             ;
+; Qsll:G3|vet[5]                         ; Merged with Qsll:G3|vet[12]            ;
+; Qsll:G3|vet[7]                         ; Merged with Qsll:G3|vet[11]            ;
+; Qsll:G3|vet[4]                         ; Stuck at GND due to stuck port data_in ;
+; Qsll:G3|resshift[4]                    ; Stuck at GND due to stuck port data_in ;
+; ShiftEsquerda:G9|AUX[4]                ; Stuck at GND due to stuck port data_in ;
+; ShiftEsquerda:G9|SAIDA[4]              ; Stuck at GND due to stuck port data_in ;
+; Qsll:G3|vet[2,3,8..13]                 ; Stuck at GND due to stuck port data_in ;
+; Qsll:G3|resshift[2,3,8..13]            ; Stuck at GND due to stuck port data_in ;
+; Qsll:G3|resshift[14,15]                ; Lost fanout                            ;
+; ShiftEsquerda:G9|AUX[3,5,10]           ; Stuck at GND due to stuck port data_in ;
+; ShiftEsquerda:G9|SAIDA[3,5,10]         ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 60 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                  ;
++--------------------------+---------------------------+-----------------------------------------------------------------------+
+; Register name            ; Reason for Removal        ; Registers Removed due to This Register                                ;
++--------------------------+---------------------------+-----------------------------------------------------------------------+
+; ShiftEsquerda:G9|AUX[1]  ; Stuck at GND              ; ShiftEsquerda:G9|SAIDA[1], Qsll:G3|resshift[14], Qsll:G3|resshift[15] ;
+;                          ; due to stuck port data_in ;                                                                       ;
+; ShiftEsquerda:G9|AUX[0]  ; Stuck at GND              ; ShiftEsquerda:G9|SAIDA[0]                                             ;
+;                          ; due to stuck port data_in ;                                                                       ;
+; Qsll:G3|vet[0]           ; Stuck at GND              ; Qsll:G3|resshift[0]                                                   ;
+;                          ; due to stuck port data_in ;                                                                       ;
+; Qsll:G3|vet[1]           ; Stuck at GND              ; Qsll:G3|resshift[1]                                                   ;
+;                          ; due to stuck port data_in ;                                                                       ;
+; Qsll:G3|vet[4]           ; Stuck at GND              ; Qsll:G3|resshift[4]                                                   ;
+;                          ; due to stuck port data_in ;                                                                       ;
+; ShiftEsquerda:G9|AUX[4]  ; Stuck at GND              ; ShiftEsquerda:G9|SAIDA[4]                                             ;
+;                          ; due to stuck port data_in ;                                                                       ;
+; Qsll:G3|vet[2]           ; Stuck at GND              ; Qsll:G3|resshift[2]                                                   ;
+;                          ; due to stuck port data_in ;                                                                       ;
+; Qsll:G3|vet[3]           ; Stuck at GND              ; Qsll:G3|resshift[3]                                                   ;
+;                          ; due to stuck port data_in ;                                                                       ;
+; Qsll:G3|vet[8]           ; Stuck at GND              ; Qsll:G3|resshift[8]                                                   ;
+;                          ; due to stuck port data_in ;                                                                       ;
+; Qsll:G3|vet[9]           ; Stuck at GND              ; Qsll:G3|resshift[9]                                                   ;
+;                          ; due to stuck port data_in ;                                                                       ;
+; Qsll:G3|vet[10]          ; Stuck at GND              ; Qsll:G3|resshift[10]                                                  ;
+;                          ; due to stuck port data_in ;                                                                       ;
+; Qsll:G3|vet[11]          ; Stuck at GND              ; Qsll:G3|resshift[11]                                                  ;
+;                          ; due to stuck port data_in ;                                                                       ;
+; Qsll:G3|vet[12]          ; Stuck at GND              ; Qsll:G3|resshift[12]                                                  ;
+;                          ; due to stuck port data_in ;                                                                       ;
+; Qsll:G3|vet[13]          ; Stuck at GND              ; Qsll:G3|resshift[13]                                                  ;
+;                          ; due to stuck port data_in ;                                                                       ;
+; ShiftEsquerda:G9|AUX[3]  ; Stuck at GND              ; ShiftEsquerda:G9|SAIDA[3]                                             ;
+;                          ; due to stuck port data_in ;                                                                       ;
+; ShiftEsquerda:G9|AUX[5]  ; Stuck at GND              ; ShiftEsquerda:G9|SAIDA[5]                                             ;
+;                          ; due to stuck port data_in ;                                                                       ;
+; ShiftEsquerda:G9|AUX[10] ; Stuck at GND              ; ShiftEsquerda:G9|SAIDA[10]                                            ;
+;                          ; due to stuck port data_in ;                                                                       ;
++--------------------------+---------------------------+-----------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 34    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 14    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions            ;
++---------------------------+----------------------+------+
+; Register Name             ; Megafunction         ; Type ;
++---------------------------+----------------------+------+
+; memram:G17|SaiData[0..15] ; memram:G17|RAM_rtl_0 ; RAM  ;
++---------------------------+----------------------+------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |DataPath|memoria_ROM2:G4|rd[1]            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DataPath|memoria_ROM2:G4|tipoi[3]         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DataPath|memoria_ROM2:G4|rs[1]            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |DataPath|memoria_ROM2:G4|rs[2]            ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |DataPath|memoria_ROM2:G4|op[0]            ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |DataPath|ULA:G16|Prod                     ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |DataPath|ULA:G16|Prod                     ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |DataPath|ULA:G16|Prod                     ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |DataPath|ULA:G16|Prod                     ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |DataPath|ULA:G16|Prod                     ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |DataPath|ULA:G16|Prod                     ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |DataPath|Multiplexador2x1:G6|SAIDA[2]     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DataPath|memoria_ROM2:G4|tipoi[1]         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |DataPath|BancoRegistradores:G7|Mux7       ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |DataPath|BancoRegistradores:G7|Mux19      ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |DataPath|BancoRegistradores:G7|Reg[3][2]  ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |DataPath|BancoRegistradores:G7|Reg[2][15] ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |DataPath|BancoRegistradores:G7|Reg[1][11] ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |DataPath|BancoRegistradores:G7|Reg[0][11] ;
+; 35:1               ; 2 bits    ; 46 LEs        ; 10 LEs               ; 36 LEs                 ; No         ; |DataPath|ULA:G16|Saida_to_Dados[15]       ;
+; 67:1               ; 7 bits    ; 308 LEs       ; 42 LEs               ; 266 LEs                ; No         ; |DataPath|ULA:G16|Saida_to_Dados[10]       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Source assignments for memram:G17|altsyncram:RAM_rtl_0|altsyncram_gjv1:auto_generated ;
++---------------------------------+--------------------+------+-------------------------+
+; Assignment                      ; Value              ; From ; To                      ;
++---------------------------------+--------------------+------+-------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                       ;
++---------------------------------+--------------------+------+-------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: memram:G17|altsyncram:RAM_rtl_0                      ;
++------------------------------------+-------------------------------------------------+----------------+
+; Parameter Name                     ; Value                                           ; Type           ;
++------------------------------------+-------------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                               ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                              ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                             ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                              ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                             ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                               ; Untyped        ;
+; OPERATION_MODE                     ; DUAL_PORT                                       ; Untyped        ;
+; WIDTH_A                            ; 16                                              ; Untyped        ;
+; WIDTHAD_A                          ; 10                                              ; Untyped        ;
+; NUMWORDS_A                         ; 1001                                            ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                    ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                            ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                            ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                            ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                            ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                            ; Untyped        ;
+; WIDTH_B                            ; 16                                              ; Untyped        ;
+; WIDTHAD_B                          ; 10                                              ; Untyped        ;
+; NUMWORDS_B                         ; 1001                                            ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                          ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                          ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK0                                          ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK0                                          ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                    ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                          ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                            ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                            ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                            ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                            ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                            ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                            ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                               ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                               ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                            ; Untyped        ;
+; BYTE_SIZE                          ; 8                                               ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                        ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                            ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                            ; Untyped        ;
+; INIT_FILE                          ; db/Torre_Processor.ram0_memram_e416e912.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                          ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                               ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                          ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                          ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                          ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                          ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                 ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                 ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                           ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                           ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                               ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone V                                       ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_gjv1                                 ; Untyped        ;
++------------------------------------+-------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                            ;
++-------------------------------------------+---------------------------------+
+; Name                                      ; Value                           ;
++-------------------------------------------+---------------------------------+
+; Number of entity instances                ; 1                               ;
+; Entity Instance                           ; memram:G17|altsyncram:RAM_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                       ;
+;     -- WIDTH_A                            ; 16                              ;
+;     -- NUMWORDS_A                         ; 1001                            ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                    ;
+;     -- WIDTH_B                            ; 16                              ;
+;     -- NUMWORDS_B                         ; 1001                            ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                          ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                    ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                            ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                        ;
++-------------------------------------------+---------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "UnidadedeControle:G5"                                                                                                                        ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; clock ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 34                          ;
+;     SLD               ; 14                          ;
+;     plain             ; 20                          ;
+; arriav_lcell_comb     ; 563                         ;
+;     arith             ; 189                         ;
+;         0 data inputs ; 8                           ;
+;         1 data inputs ; 27                          ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 21                          ;
+;         4 data inputs ; 14                          ;
+;         5 data inputs ; 116                         ;
+;     extend            ; 6                           ;
+;         7 data inputs ; 6                           ;
+;     normal            ; 368                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 17                          ;
+;         3 data inputs ; 119                         ;
+;         4 data inputs ; 64                          ;
+;         5 data inputs ; 69                          ;
+;         6 data inputs ; 91                          ;
+; boundary_port         ; 186                         ;
+; stratixv_ram_block    ; 16                          ;
+;                       ;                             ;
+; Max LUT depth         ; 23.20                       ;
+; Average LUT depth     ; 14.47                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:13     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Processing started: Tue Dec 04 22:57:30 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Torre_Processor -c Torre_Processor
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/unidadedecontrole.vhd
+    Info (12022): Found design unit 1: UnidadedeControle-behavior File: E:/Documentos/Torre_Processor/Componentes/UnidadedeControle.vhd Line: 21
+    Info (12023): Found entity 1: UnidadedeControle File: E:/Documentos/Torre_Processor/Componentes/UnidadedeControle.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/ula.vhd
+    Info (12022): Found design unit 1: ULA-behavior File: E:/Documentos/Torre_Processor/Componentes/ULA.vhd Line: 19
+    Info (12023): Found entity 1: ULA File: E:/Documentos/Torre_Processor/Componentes/ULA.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/somadorpc.vhd
+    Info (12022): Found design unit 1: SomadorPC-behavior File: E:/Documentos/Torre_Processor/Componentes/SomadorPC.vhd Line: 13
+    Info (12023): Found entity 1: SomadorPC File: E:/Documentos/Torre_Processor/Componentes/SomadorPC.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/somadorde16bits.vhd
+    Info (12022): Found design unit 1: Somadorde16bits-BEHAVIOR File: E:/Documentos/Torre_Processor/Componentes/Somadorde16bits.vhd Line: 14
+    Info (12023): Found entity 1: Somadorde16bits File: E:/Documentos/Torre_Processor/Componentes/Somadorde16bits.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/shiftesquerda.vhd
+    Info (12022): Found design unit 1: ShiftEsquerda-BEHAVIOR File: E:/Documentos/Torre_Processor/Componentes/ShiftEsquerda.vhd Line: 16
+    Info (12023): Found entity 1: ShiftEsquerda File: E:/Documentos/Torre_Processor/Componentes/ShiftEsquerda.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/qsll.vhd
+    Info (12022): Found design unit 1: Qsll-behavior File: E:/Documentos/Torre_Processor/Componentes/Qsll.vhd Line: 13
+    Info (12023): Found entity 1: Qsll File: E:/Documentos/Torre_Processor/Componentes/Qsll.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/qandbit.vhd
+    Info (12022): Found design unit 1: QandBIT-behavior File: E:/Documentos/Torre_Processor/Componentes/QAndBIT.vhd Line: 11
+    Info (12023): Found entity 1: QAndBIT File: E:/Documentos/Torre_Processor/Componentes/QAndBIT.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/pc.vhd
+    Info (12022): Found design unit 1: PC-behavior File: E:/Documentos/Torre_Processor/Componentes/PC.vhd Line: 17
+    Info (12023): Found entity 1: PC File: E:/Documentos/Torre_Processor/Componentes/PC.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/operacaodaula.vhd
+    Info (12022): Found design unit 1: OperacaoDaULA-BEHAVIOR File: E:/Documentos/Torre_Processor/Componentes/OperacaoDaULA.vhd Line: 16
+    Info (12023): Found entity 1: OperacaoDaULA File: E:/Documentos/Torre_Processor/Componentes/OperacaoDaULA.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/multiplexador2x1_16bits.vhd
+    Info (12022): Found design unit 1: Multiplexador2x1_16bits-Multiplexador2x1_16bits File: E:/Documentos/Torre_Processor/Componentes/Multiplexador2x1_16bits.vhd Line: 16
+    Info (12023): Found entity 1: Multiplexador2x1_16bits File: E:/Documentos/Torre_Processor/Componentes/Multiplexador2x1_16bits.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/multiplexador2x1.vhd
+    Info (12022): Found design unit 1: Multiplexador2x1-Multiplexador2x1 File: E:/Documentos/Torre_Processor/Componentes/Multiplexador2x1.vhd Line: 16
+    Info (12023): Found entity 1: Multiplexador2x1 File: E:/Documentos/Torre_Processor/Componentes/Multiplexador2x1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/memram.vhd
+    Info (12022): Found design unit 1: memram-behavior File: E:/Documentos/Torre_Processor/Componentes/memram.vhd Line: 14
+    Info (12023): Found entity 1: memram File: E:/Documentos/Torre_Processor/Componentes/memram.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/memoria_rom2.vhd
+    Info (12022): Found design unit 1: memoria_ROM2-behavior File: E:/Documentos/Torre_Processor/Componentes/memoria_rom2.vhd Line: 20
+    Info (12023): Found entity 1: memoria_ROM2 File: E:/Documentos/Torre_Processor/Componentes/memoria_rom2.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/extensordesinal6to16bits.vhd
+    Info (12022): Found design unit 1: ExtensordeSinal6To16bits-BEHAVIOR File: E:/Documentos/Torre_Processor/Componentes/ExtensordeSinal6To16bits.vhd Line: 15
+    Info (12023): Found entity 1: ExtensordeSinal6To16bits File: E:/Documentos/Torre_Processor/Componentes/ExtensordeSinal6To16bits.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/datapath.vhd
+    Info (12022): Found design unit 1: DataPath-behavior File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 58
+    Info (12023): Found entity 1: DataPath File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/bancoregistradores.vhd
+    Info (12022): Found design unit 1: BancoRegistradores-behavior File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 19
+    Info (12023): Found entity 1: BancoRegistradores File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 6
+Info (12127): Elaborating entity "DataPath" for the top level hierarchy
+Info (12128): Elaborating entity "PC" for hierarchy "PC:G1" File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 310
+Info (12128): Elaborating entity "SomadorPC" for hierarchy "SomadorPC:G2" File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 316
+Info (12128): Elaborating entity "Qsll" for hierarchy "Qsll:G3" File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 322
+Info (12128): Elaborating entity "memoria_ROM2" for hierarchy "memoria_ROM2:G4" File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 329
+Info (12128): Elaborating entity "UnidadedeControle" for hierarchy "UnidadedeControle:G5" File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 341
+Info (12128): Elaborating entity "Multiplexador2x1" for hierarchy "Multiplexador2x1:G6" File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 354
+Info (12128): Elaborating entity "BancoRegistradores" for hierarchy "BancoRegistradores:G7" File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 362
+Warning (10631): VHDL Process Statement warning at BancoRegistradores.vhd(26): inferring latch(es) for signal or variable "Reg", which holds its previous value in one or more paths through the process File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 26
+Info (10041): Inferred latch for "Reg[7][0]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[7][1]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[7][2]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[7][3]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[7][4]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[7][5]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[7][6]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[7][7]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[7][8]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[7][9]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[7][10]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[7][11]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[7][12]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[7][13]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[7][14]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[7][15]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[6][0]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[6][1]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[6][2]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[6][3]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[6][4]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[6][5]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[6][6]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[6][7]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[6][8]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[6][9]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[6][10]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[6][11]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[6][12]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[6][13]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[6][14]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[6][15]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[5][0]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[5][1]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[5][2]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[5][3]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[5][4]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[5][5]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[5][6]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[5][7]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[5][8]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[5][9]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[5][10]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[5][11]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[5][12]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[5][13]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[5][14]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[5][15]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[4][0]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[4][1]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[4][2]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[4][3]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[4][4]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[4][5]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[4][6]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[4][7]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[4][8]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[4][9]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[4][10]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[4][11]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[4][12]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[4][13]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[4][14]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (10041): Inferred latch for "Reg[4][15]" at BancoRegistradores.vhd(32) File: E:/Documentos/Torre_Processor/Componentes/BancoRegistradores.vhd Line: 32
+Info (12128): Elaborating entity "ExtensordeSinal6To16bits" for hierarchy "ExtensordeSinal6To16bits:G8" File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 373
+Info (12128): Elaborating entity "ShiftEsquerda" for hierarchy "ShiftEsquerda:G9" File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 379
+Info (12128): Elaborating entity "Somadorde16bits" for hierarchy "Somadorde16bits:G10" File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 385
+Warning (10492): VHDL Process Statement warning at Somadorde16bits.vhd(18): signal "ENTRADA1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Documentos/Torre_Processor/Componentes/Somadorde16bits.vhd Line: 18
+Warning (10492): VHDL Process Statement warning at Somadorde16bits.vhd(18): signal "ENTRADA2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Documentos/Torre_Processor/Componentes/Somadorde16bits.vhd Line: 18
+Info (12128): Elaborating entity "QAndBIT" for hierarchy "QAndBIT:G11" File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 392
+Info (12128): Elaborating entity "Multiplexador2x1_16bits" for hierarchy "Multiplexador2x1_16bits:G12" File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 398
+Info (12128): Elaborating entity "OperacaoDaULA" for hierarchy "OperacaoDaULA:G15" File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 422
+Info (12128): Elaborating entity "ULA" for hierarchy "ULA:G16" File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 427
+Info (12128): Elaborating entity "memram" for hierarchy "memram:G17" File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 435
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "memram:G17|RAM_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 16
+        Info (286033): Parameter WIDTHAD_A set to 10
+        Info (286033): Parameter NUMWORDS_A set to 1001
+        Info (286033): Parameter WIDTH_B set to 16
+        Info (286033): Parameter WIDTHAD_B set to 10
+        Info (286033): Parameter NUMWORDS_B set to 1001
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/Torre_Processor.ram0_memram_e416e912.hdl.mif
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+        Info (286033): Parameter RDCONTROL_REG_B set to CLOCK0
+Info (12130): Elaborated megafunction instantiation "memram:G17|altsyncram:RAM_rtl_0"
+Info (12133): Instantiated megafunction "memram:G17|altsyncram:RAM_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "16"
+    Info (12134): Parameter "WIDTHAD_A" = "10"
+    Info (12134): Parameter "NUMWORDS_A" = "1001"
+    Info (12134): Parameter "WIDTH_B" = "16"
+    Info (12134): Parameter "WIDTHAD_B" = "10"
+    Info (12134): Parameter "NUMWORDS_B" = "1001"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/Torre_Processor.ram0_memram_e416e912.hdl.mif"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+    Info (12134): Parameter "RDCONTROL_REG_B" = "CLOCK0"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_gjv1.tdf
+    Info (12023): Found entity 1: altsyncram_gjv1 File: E:/Documentos/Torre_Processor/db/altsyncram_gjv1.tdf Line: 27
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "Instruction_to_Control_outWaveform[2]" is stuck at GND File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 22
+    Warning (13410): Pin "Instruction_to_Control_outWaveform[3]" is stuck at GND File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 22
+    Warning (13410): Pin "Instruction_to_controlULA_outWaveform[2]" is stuck at GND File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 25
+    Warning (13410): Pin "Instruction_to_extensorDeSinal_outWaveform[2]" is stuck at GND File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 26
+    Warning (13410): Pin "Instruction_to_Jump_outWaveform[0]" is stuck at GND File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 27
+    Warning (13410): Pin "Instruction_to_Jump_outWaveform[1]" is stuck at GND File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 27
+    Warning (13410): Pin "Instruction_to_Jump_outWaveform[2]" is stuck at GND File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 27
+    Warning (13410): Pin "Instruction_to_Jump_outWaveform[3]" is stuck at GND File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 27
+    Warning (13410): Pin "Instruction_to_Jump_outWaveform[4]" is stuck at GND File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 27
+    Warning (13410): Pin "Instruction_to_Jump_outWaveform[5]" is stuck at GND File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 27
+    Warning (13410): Pin "Instruction_to_Jump_outWaveform[6]" is stuck at GND File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 27
+    Warning (13410): Pin "Instruction_to_Jump_outWaveform[7]" is stuck at GND File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 27
+    Warning (13410): Pin "Instruction_to_Jump_outWaveform[8]" is stuck at GND File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 27
+    Warning (13410): Pin "Instruction_to_Jump_outWaveform[9]" is stuck at GND File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 27
+    Warning (13410): Pin "Instruction_to_Jump_outWaveform[10]" is stuck at GND File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 27
+    Warning (13410): Pin "Instruction_to_Jump_outWaveform[11]" is stuck at GND File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 27
+    Warning (13410): Pin "out_Saida_OperacaoDaULA[2]" is stuck at GND File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 29
+    Warning (13410): Pin "out_Saida_OperacaoDaULA[5]" is stuck at GND File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 29
+    Warning (13410): Pin "out_Saida_OperacaoDaULA[6]" is stuck at GND File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 29
+    Warning (13410): Pin "Flag_origialu_OUT[2]" is stuck at GND File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 44
+    Warning (13410): Pin "Flag_origialu_OUT[3]" is stuck at GND File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 44
+    Warning (13410): Pin "Flag_jump_OUT" is stuck at GND File: E:/Documentos/Torre_Processor/Componentes/DataPath.vhd Line: 51
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 776 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 185 output pins
+    Info (21061): Implemented 574 logic cells
+    Info (21064): Implemented 16 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 28 warnings
+    Info: Peak virtual memory: 4917 megabytes
+    Info: Processing ended: Tue Dec 04 22:58:08 2018
+    Info: Elapsed time: 00:00:38
+    Info: Total CPU time (on all processors): 00:01:04
+
+
